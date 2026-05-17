@@ -1,114 +1,107 @@
-🔐 MyPass – Simple Password Manager
+# 🔐 MyPass — Password Manager
 
-A lightweight command-line password manager built in Python to securely store and retrieve credentials.
+> A lightweight CLI tool to store, retrieve, and generate passwords — all locally, all yours.
 
-🚀 Overview
+Built in Python as a practical dive into file handling, data structures, and real-world CLI design. No bloat, no cloud dependency — just a fast, simple manager that works from your terminal.
 
-MyPass is a minimal yet functional password manager that allows users to:
+---
 
-* Store login credentials for different services
-* Retrieve saved passwords instantly
-* Copy passwords directly to clipboard for quick use
+## 🎯 What It Does
 
-Designed as a practical project to explore file handling, data storage, and user interaction in Python.
+MyPass lets you save credentials for any service, retrieve them instantly, and copy passwords straight to your clipboard — all from the command line.
 
-⸻
+---
 
-✨ Features
+## ✨ Features
 
-* 🔑 Save passwords with associated service and email
-* 🔍 Retrieve stored credentials easily
-* 📋 Auto-copy passwords to clipboard using pyperclip
-* 💾 Persistent storage using JSON
-* ⚡ Fast and simple CLI interface
+- 🔑 Save credentials (service, email, password) in one command
+- 🔍 Retrieve stored passwords instantly by service name
+- 📋 Auto-copies password to clipboard via `pyperclip`
+- 💾 Persistent local storage using JSON
+- ⚡ Minimal CLI — no setup overhead
 
-⸻
+---
 
-🛠 Tech Stack
+## 🛠 Tech Stack
 
-* Python 3
-* JSON (for data storage)
-* pyperclip (clipboard functionality)
+| | |
+|---|---|
+| Language | Python 3 |
+| Storage | JSON |
+| Clipboard | pyperclip |
+| Packaging | Poetry |
 
-⸻
+---
 
-📂 Project Structure
+## 📂 Project Structure
 
+```
 MyPass/
-│── main.py
-│── data.json
-│── pyproject.toml
-│── poetry.lock
+├── main.py          # Core CLI logic
+├── data.json        # Local credential store
+├── pyproject.toml   # Dependencies
+└── poetry.lock
+```
 
-⸻
+---
 
-⚙️ Installation & Setup
+## ⚙️ Installation
 
-1. Clone the repository:
-    git clone https://github.com/withaarav/mypass.git
-    cd mypass
-2. Install dependencies:
-    pip install pyperclip
-3. Run the program:
-    python main.py
+```bash
+# Clone the repo
+git clone https://github.com/withaarav/Password-Manager.git
+cd Password-Manager
 
-⸻
+# Install dependencies
+pip install pyperclip
 
-💡 How It Works
+# Run
+python main.py
+```
 
-Credentials are stored in a local JSON file.
+---
 
-Each entry contains:
+## 💡 How It Works
 
-* Website name
-* Email/username
-* Password
+Credentials are stored in `data.json` as structured entries:
 
-Example structure:
-
+```json
 {
-“example”: {
-“email”: “user@example.com”,
-“password”: “securepassword123”
+  "github": {
+    "email": "you@example.com",
+    "password": "your_password"
+  }
 }
-}
+```
 
-⸻
+On retrieval, the password is loaded and copied to your clipboard automatically.
 
-🎯 Why I Built This
+---
 
-I built MyPass to understand:
+## 🧠 What I Learned
 
-* File handling in Python
-* Structuring real-world CLI tools
-* Managing user data efficiently
+- Structuring real-world CLI tools in Python
+- Reading and writing persistent data with JSON
+- Handling user input and edge cases cleanly
+- Using `pyperclip` for clipboard integration
 
-This project is part of my journey into building practical and secure applications.
+---
 
-⸻
+## ⚠️ Disclaimer
 
-⚠️ Disclaimer
+This is a **learning project** — passwords are stored in plain text locally. Not intended for production use. Encryption is on the roadmap.
 
-This is a learning project and NOT intended for production use.
-Passwords are stored locally and are not encrypted.
+---
 
-⸻
+## 🔮 What's Next
 
-🚀 Future Improvements
+- [ ] Encrypt stored passwords (Fernet / AES)
+- [ ] Add a master password with hashed authentication
+- [ ] GUI version with Tkinter or PyQt
+- [ ] Cloud sync option
 
-* Add encryption for stored passwords
-* Build a GUI version
-* Add cloud sync support
-* Add master password authentication
+---
 
-⸻
+## 📬 Contact
 
-🤝 Contributing
-
-Feel free to fork the repo, improve features, or suggest enhancements!
-
-⸻
-
-📬 Contact
-
-GitHub: https://github.com/withaarav
+Made by [Aarav Porwal](https://github.com/withaarav) · with.aarav@gmail.com
